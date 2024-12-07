@@ -16,12 +16,13 @@ The issue was _possibly_ introduced in [#29957](https://github.com/nuxt/nuxt/pul
 ## Reproduction
 
 1. Install dependencies
-2. Run `pnpm wrangler:dev` which builds the project and serves it locally
-3. Open the page, and inspect the console. You'll see the hydration error.
-4. Inspect the `red` text on the page, and notice the styles are bound via an ID of `#my-component`
-5. Right-click the page, and "View source." Search for the string `my-component` and notice it does not appear in the server-rendered HTML
-6. Stop the server, and install the previous version of Nuxt: `pnpm add nuxt@3.14.159`
-7. Walk through steps 2 - 5 and notice the hydration error is gone, and the `#my-component` styles are now present in the server-rendered HTML.
+2. Run `pnpm dev` and open your browser console. You’ll notice there are no hydration errors.
+3. Run `pnpm wrangler:dev` which builds the project and serves it locally
+4. Open the page, and inspect the console. You'll see the hydration error.
+5. Inspect the `red` text on the page, and notice the styles are bound via a selector of `#my-component`
+6. Right-click the page, and "View page source." Search for the string `my-component` and notice it does not appear in the server-rendered HTML
+7. Stop the server, and install the previous version of Nuxt: `pnpm add nuxt@3.14.159`
+8. Walk through steps 3 - 6 and notice the hydration error is gone, and the `#my-component` styles are now present in the server-rendered HTML.
 
 ## What else I tried
 

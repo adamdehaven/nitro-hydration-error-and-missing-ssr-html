@@ -27,7 +27,7 @@ The issue was _possibly_ introduced in [#29957](https://github.com/nuxt/nuxt/pul
 ## What else I tried
 
 - I tried downgrading `nitropack` all the way back to version `2.10.0` via `pnpm.overrides`; however, the issue persists as long as Nuxt is installed with version `3.14.1592` specifically. If I install `3.14.159` instead, everything works correctly.
-- I also force-upgraded `nitropack` to the latest, also with overrides, and pinned nuxt to the broken version `3.14.1592` and the issue again persists.
+- I also force-upgraded `nitropack` to the latest, also with overrides, and pinned nuxt to the working version `3.14.159` and the issue is not present.
 
 I'm confident the issue, although only seemingly surfaced when building with Cloudflare and the `cloudflare-module` preset (at least, in my testing), appears to have been introduced by Nuxt, not Nitro.
 

@@ -1,0 +1,16 @@
+main = "./.output/server/index.mjs"
+assets = { directory = "./.output/public/", binding = "ASSETS" }
+# Use a fallback name (can be discarded at-will since not mapped to Dev or Production)
+name = "reproduction"
+# Disable use of `*.workers.dev` subdomain
+workers_dev = false
+# https://developers.cloudflare.com/workers/configuration/compatibility-dates/#change-history
+compatibility_date = "2024-09-19"
+compatibility_flags = [ "nodejs_compat" ]
+rules = [
+  { type = "ESModule", globs = ["**/*.js", "**/*.mjs"]},
+]
+# Minify the Worker script before uploading
+minify = true
+logpush = true
+send_metrics = true

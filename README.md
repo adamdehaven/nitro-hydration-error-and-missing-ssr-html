@@ -7,7 +7,7 @@ Upgrading to `nuxt@3.14.1592` (which includes `nitropack@2.10.4`) introduces the
 1. A hydration error that only appears when building and then previewing (or deploying) with `wrangler` and the `cloudflare-module` preset (I did not test other presets).
 
     ![Hydration Error](hydration-error.png)
-2. The bug also causes component styles added via `useHead` in the `CustomComponent.vue` file to not be added to the page during SSR; you can verify by refreshing the page and viewing the page source. Search for `my-component` and notice the styles are not included in the static HTML returned from the server.
+2. The bug also causes component styles added via `useHead` in the `CustomComponent.vue` file (and HTML?) to not be added to the page during SSR; you can verify by refreshing the page and viewing the page source. Search for `my-component` and notice the styles are not included in the static HTML returned from the server.
 
 I've narrowed down the issue to the [`nuxt@3.14.1592` version](https://github.com/nuxt/nuxt/releases/tag/v3.14.1592).
 
